@@ -78,6 +78,8 @@ app.use(express.json());
   app.get('/api/updateWebsite', async (req, res) => {
     const id = req.query.id;
     const website = req.query.website;
+    //is there a bug here?
+      
     await db.updateWebsite(id, website);
     res.status(200).send(`Record updated with id ${id}`);
   });
